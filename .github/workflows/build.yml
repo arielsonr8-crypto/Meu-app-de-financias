@@ -11,6 +11,11 @@ jobs:
       - name: Baixar o projeto
         uses: actions/checkout@v4
 
+      - name: Abrir o ZIP do projeto
+        run: |
+          unzip -o MeuFinanceiro.zip -d extraido
+          cp -a extraido/MeuFinanceiro/. .
+
       - name: Instalar Java
         uses: actions/setup-java@v4
         with:
